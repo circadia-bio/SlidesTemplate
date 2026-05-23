@@ -1,5 +1,4 @@
 ---
-title: "Presentation Title"
 format:
   revealjs:
     theme: [default, custom.scss]
