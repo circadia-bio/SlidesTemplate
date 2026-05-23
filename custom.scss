@@ -1,0 +1,181 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Alice&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// Colours — exact hex from the Circadia template
+$c-navy:   #004474;
+$c-blue:   #1B6799;
+$c-coral:  #FC544A;
+$c-bg:     #FAEBD7;
+
+// RevealJS variable overrides
+$body-bg:                          $c-bg;
+$body-color:                       $c-navy;
+$link-color:                       $c-coral;
+$heading-color:                    $c-navy;
+$font-family-sans-serif:           'Alice', Georgia, serif;
+$presentation-heading-font:        'Playfair Display', Georgia, serif;
+$presentation-heading-font-weight: 500;
+$presentation-font-size-root:      38px;
+$code-block-font-size:             0.68em;
+
+/*-- scss:rules --*/
+
+// ── Base ──────────────────────────────────────────────────────────────────
+
+.reveal {
+  font-family: 'Alice', Georgia, serif;
+  color: $c-navy;
+  background-color: $c-bg;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  color: $c-navy;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.reveal h2 { font-size: 1.45em; margin-bottom: 0.4em; }
+.reveal h3 { font-size: 1.1em;  color: $c-blue; }
+
+.reveal p, .reveal li {
+  font-family: 'Alice', Georgia, serif;
+  color: $c-navy;
+  line-height: 1.45;
+}
+
+.reveal a { color: $c-coral; text-decoration: none; }
+.reveal a:hover { text-decoration: underline; }
+
+// ── Code ──────────────────────────────────────────────────────────────────
+
+.reveal code, .reveal pre { font-family: 'JetBrains Mono', monospace; }
+
+.reveal pre {
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.10);
+  font-size: 0.68em;
+}
+
+.reveal code:not(pre code) {
+  background: rgba(0,68,116,.08);
+  color: $c-coral;
+  padding: .05em .3em;
+  border-radius: 3px;
+  font-size: .85em;
+}
+
+// ── Typography helpers ────────────────────────────────────────────────────
+
+.reveal strong { color: $c-coral; font-weight: 700; }
+
+.reveal .intro {
+  color: $c-blue;
+  font-size: 0.82em;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.reveal .cta {
+  color: $c-coral !important;
+  font-weight: 700;
+  font-size: 0.82em;
+}
+
+// ── Lists — em-dash in coral ──────────────────────────────────────────────
+
+.reveal ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.2em;
+}
+
+.reveal ul > li {
+  padding-left: 1.5em;
+  position: relative;
+  margin-bottom: 0.25em;
+  &::before {
+    content: "—";
+    color: $c-coral;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────
+
+.reveal table {
+  font-size: 0.72em;
+  font-family: 'Alice', serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.reveal table th {
+  background: $c-navy;
+  color: #fff;
+  padding: 5px 10px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.reveal table td {
+  padding: 4px 10px;
+  border-bottom: 1px solid rgba(0,68,116,.12);
+  color: $c-navy;
+}
+
+.reveal table tr:nth-child(even) td { background: rgba(0,68,116,.04); }
+
+// ── Callouts ─────────────────────────────────────────────────────────────
+
+.reveal .callout {
+  border-radius: 5px;
+  font-size: 0.78em;
+  font-family: 'Alice', serif;
+}
+.reveal .callout-tip  { border-left-color: $c-coral; }
+.reveal .callout-note { border-left-color: $c-blue;  }
+
+// ── Chrome ───────────────────────────────────────────────────────────────
+
+.reveal .progress { color: $c-coral; height: 3px; }
+
+.reveal .slide-number {
+  font-family: 'Alice', serif;
+  font-size: .48em;
+  color: $c-blue;
+  background: transparent;
+  bottom: 8px !important;
+  top: auto !important;
+  right: 8px !important;
+  left: auto !important;
+}
+
+.reveal .footer { font-family: 'Alice', serif; font-size: .44em; color: $c-blue; opacity: .7; }
+
+// ── Columns ───────────────────────────────────────────────────────────────
+
+.reveal .columns { align-items: start; gap: 2rem; }
+
+// ── Logo ─────────────────────────────────────────────────────────────────
+
+.reveal .slide-logo {
+  opacity: 0.35;
+  max-height: 36px !important;
+  bottom: 32px !important;
+  top: auto !important;
+}
+
+// ── Title slide — hide chrome ─────────────────────────────────────────────
+
+.hide-footer .reveal .footer,
+.hide-footer .footer,
+.hide-footer .slide-number,
+.hide-footer .slide-logo {
+  display: none !important;
+}
