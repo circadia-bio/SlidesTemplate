@@ -32,7 +32,7 @@ git commit -m "✨ feat: initial slide content"
 git push
 ```
 
-See [`docs/getting-started.md`](docs/getting-started.md) for a full step-by-step guide.
+See [`guide/getting-started.md`](guide/getting-started.md) for a full step-by-step guide.
 
 ---
 
