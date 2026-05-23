@@ -116,4 +116,6 @@ SlidesTemplate/
 
 Released under the [MIT License](./LICENSE).
 
+![](assets/circadia_logo.png)
+
 Copyright © Circadia Lab — Lucas França & Mario Leocadio-Miguel
