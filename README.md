@@ -11,45 +11,28 @@
 
 A ready-to-use Quarto RevealJS slide template matching the Circadia Lab visual identity — Playfair Display headings, Alice body text, navy/coral/cream colour palette, and the split-panel cover slide.
 
-Clone or use as a GitHub template to start a new presentation in seconds.
+Clone or use as a GitHub template to start a new presentation in seconds. Every push to `main` automatically re-renders the slides and publishes them to a public GitHub Pages URL — no manual export required.
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Quarto](https://quarto.org) ≥ 1.4
-- [R](https://www.r-project.org/) + RStudio (optional — for the `.Rproj`)
-
-### Use as a template
-
-Click **Use this template** on GitHub, name your repo, then clone it locally.
-
-### Or clone directly
+## 🚀 Quick start
 
 ```bash
-git clone https://github.com/circadia-bio/SlidesTemplate.git my-talk
-cd my-talk
-```
+# 1. Click "Use this template" on GitHub and name your new repo
+# 2. Clone it
+git clone https://github.com/circadia-bio/YOUR-REPO-NAME.git
+cd YOUR-REPO-NAME
 
-### Add your assets
-
-Replace the placeholder text in `template.qmd` and drop your own `cover.png` into `assets/` if you want a custom cover image. The shared Circadia and Northumbria logos are already included.
-
-### Preview
-
-```bash
+# 3. Preview locally
 quarto preview template.qmd
+
+# 4. Edit template.qmd, commit, and push — slides deploy automatically
+git add -A
+git commit -m "✨ feat: initial slide content"
+git push
 ```
 
-### Render
-
-```bash
-quarto render template.qmd
-```
-
-Output goes to `docs/`.
+See [`docs/getting-started.md`](docs/getting-started.md) for a full step-by-step guide.
 
 ---
 
@@ -57,30 +40,35 @@ Output goes to `docs/`.
 
 ```
 SlidesTemplate/
-├── template.qmd          # ⭐ Start here — edit this for your talk
-├── custom.scss           # Circadia Lab theme (fonts, colours, layout)
-├── _quarto.yml           # Project config
-├── SlidesTemplate.Rproj  # RStudio project file
+├── template.qmd              # ⭐ Your presentation — edit this
+├── custom.scss               # Circadia Lab theme (fonts, colours, layout)
+├── _quarto.yml               # Quarto project config
+├── SlidesTemplate.Rproj      # RStudio project file
 ├── assets/
-│   ├── cover.png         # Cover slide background (replace with your own)
-│   ├── circadia_logo.png # Circadia Lab logo (watermark on slides)
-│   └── northumbria.png   # Northumbria University logo
-└── .github/workflows/
-    └── deploy.yml        # Auto-render and deploy to gh-pages on push
+│   ├── cover.png             # Cover slide background
+│   ├── circadia_logo.png     # Watermark shown on every content slide
+│   └── northumbria.png       # Northumbria University logo on cover
+├── .github/
+│   └── workflows/
+│       └── deploy.yml        # Auto-render + deploy to GitHub Pages
+└── docs/
+    ├── getting-started.md    # Full setup and authoring guide
+    ├── slide-reference.md    # All available classes and layouts
+    └── github-pages.md       # How to enable and use GitHub Pages
 ```
 
 ---
 
 ## ✨ Features
 
-- **Cover slide** — full-bleed background image with right-aligned title, subtitle, presenter, date; footer and logo hidden automatically
+- **Cover slide** — full-bleed background with right-aligned title, subtitle, presenter, date; footer and logo hidden automatically
 - **Content slides** — cream background, Playfair Display titles, Alice body, coral em-dash bullets
-- **`.intro`** — mid-blue intro paragraph class
+- **`.intro`** — mid-blue introductory paragraph
 - **`.cta`** — coral bold accent line
-- **`.smaller`** — Quarto native class for slides with more content
-- **Two-column layouts** — `:::: {.columns}` with `align-items: start`
-- **Circadia logo watermark** — 35% opacity, bottom-left, hidden on cover
-- **Auto-deploy** — GitHub Actions renders and publishes to `gh-pages` on every push to `main`
+- **`.smaller`** — scale down font on content-heavy slides
+- **Two-column layouts** — `:::: {.columns}` with sensible defaults
+- **Circadia logo watermark** — 35% opacity, auto-hidden on cover
+- **Auto-deploy** — GitHub Actions renders and publishes on every push
 
 ---
 
@@ -90,8 +78,18 @@ SlidesTemplate/
 |---|---|---|
 | Navy | `#004474` | Titles, primary text |
 | Blue | `#1B6799` | Subtitles, intro text, footer |
-| Coral | `#FC544A` | Bullets, emphasis, CTAs |
+| Coral | `#FC544A` | Bullets, bold emphasis, CTAs |
 | Cream | `#FAEBD7` | Slide background |
+
+---
+
+## 📚 Documentation
+
+| Guide | What it covers |
+|---|---|
+| [`docs/getting-started.md`](docs/getting-started.md) | Installation, first render, file overview |
+| [`docs/slide-reference.md`](docs/slide-reference.md) | Every class, layout, and formatting option |
+| [`docs/github-pages.md`](docs/github-pages.md) | Enabling Pages, custom domains, troubleshooting |
 
 ---
 
@@ -108,6 +106,8 @@ SlidesTemplate/
 
 - 🌙 [**SleepDiaries**](https://github.com/circadia-bio/SleepDiaries) — participant-facing sleep diary app
 - 📋 [**ScoreMe**](https://github.com/circadia-bio/ScoreMe) — research questionnaire scorer
+- 🛏 [**slumbR**](https://github.com/circadia-bio/slumbR) — R companion for Sleep Diaries exports
+- 🧮 [**tallieR**](https://github.com/circadia-bio/tallieR) — R companion for ScoreMe exports
 - 🔬 [**circadia-bio**](https://github.com/circadia-bio) — the Circadia Lab GitHub organisation
 
 ---
