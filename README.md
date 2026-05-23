@@ -51,10 +51,10 @@ SlidesTemplate/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml        # Auto-render + deploy to GitHub Pages
-└── docs/
-    ├── getting-started.md    # Full setup and authoring guide
-    ├── slide-reference.md    # All available classes and layouts
-    └── github-pages.md       # How to enable and use GitHub Pages
+├── guide/
+│   ├── getting-started.md    # Full setup and authoring guide
+│   ├── slide-reference.md    # All available classes and layouts
+│   └── github-pages.md       # How to enable and use GitHub Pages
 ```
 
 ---
@@ -87,9 +87,9 @@ SlidesTemplate/
 
 | Guide | What it covers |
 |---|---|
-| [`docs/getting-started.md`](docs/getting-started.md) | Installation, first render, file overview |
-| [`docs/slide-reference.md`](docs/slide-reference.md) | Every class, layout, and formatting option |
-| [`docs/github-pages.md`](docs/github-pages.md) | Enabling Pages, custom domains, troubleshooting |
+| [`guide/getting-started.md`](guide/getting-started.md) | Installation, first render, file overview |
+| [`guide/slide-reference.md`](guide/slide-reference.md) | Every class, layout, and formatting option |
+| [`guide/github-pages.md`](guide/github-pages.md) | Enabling Pages, custom domains, troubleshooting |
 
 ---
 
