@@ -1,0 +1,102 @@
+---
+title: "Presentation Title"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-overflow: wrap
+    fig-align: center
+    footer: "Circadia Lab · circadia-lab.uk · github.com/circadia-bio"
+    logo: assets/circadia_logo.png
+    width: 1280
+    height: 720
+---
+
+```{=html}
+<section data-background-image="assets/cover.png"
+         data-background-size="cover"
+         data-background-position="center"
+         data-state="hide-footer">
+  <div style="
+    position: absolute;
+    left: 560px; top: 130px;
+    width: 720px; height: 420px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 0;
+  ">
+    <h1 style="font-family:'Playfair Display',serif; font-size:2.1em; font-weight:500; color:#004474; line-height:1.1; margin:0 0 0.3em;">Presentation Title</h1>
+    <p style="font-family:'Playfair Display',serif; font-size:1.05em; color:#1B6799; margin:0 0 0.6em;">Subtitle or context</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.85em; color:#FC544A; margin:0 0 0.2em;">Presenter Name</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.72em; color:#1B6799; margin:0;">Conference / Date</p>
+  </div>
+</section>
+```
+
+## Slide title
+
+::: {.intro}
+Optional intro sentence in mid-blue.
+:::
+
+- **Label** — description
+- **Label** — description
+- **Label** — description
+
+[Optional CTA line]{.cta}
+
+---
+
+## Slide title {.smaller}
+
+Content that needs more room gets `.smaller` on the heading.
+
+---
+
+## Two columns
+
+:::: {.columns}
+::: {.column width="50%"}
+Left content here.
+:::
+::: {.column width="50%"}
+Right content here.
+:::
+::::
+
+---
+
+## Code slide
+
+```r
+# Example R code
+library(tidyverse)
+df |> filter(x > 0) |> summarise(mean(y))
+```
+
+---
+
+## Links & contact
+
+:::: {.columns}
+::: {.column width="50%"}
+[circadia-lab.uk](https://circadia-lab.uk){.cta}
+
+- **Tool** link-here
+- **GitHub** github.com/circadia-bio
+:::
+::: {.column width="50%"}
+**Presenter Name**  
+email@northumbria.ac.uk
+
+**Co-presenter Name**  
+email@northumbria.ac.uk
+:::
+::::

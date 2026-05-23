@@ -24,9 +24,9 @@ git clone https://github.com/circadia-bio/YOUR-REPO-NAME.git
 cd YOUR-REPO-NAME
 
 # 3. Preview locally
-quarto preview template.qmd
+quarto preview index.qmd
 
-# 4. Edit template.qmd, commit, and push — slides deploy automatically
+# 4. Edit index.qmd, commit, and push — slides deploy automatically
 git add -A
 git commit -m "✨ feat: initial slide content"
 git push
@@ -40,7 +40,7 @@ See [`docs/getting-started.md`](docs/getting-started.md) for a full step-by-step
 
 ```
 SlidesTemplate/
-├── template.qmd              # ⭐ Your presentation — edit this
+├── index.qmd                 # ⭐ Your presentation — edit this
 ├── custom.scss               # Circadia Lab theme (fonts, colours, layout)
 ├── _quarto.yml               # Quarto project config
 ├── SlidesTemplate.Rproj      # RStudio project file
