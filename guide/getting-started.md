@@ -151,6 +151,49 @@ To use your own cover:
 
 ---
 
+## Adding R packages for plots and tables
+
+The deploy workflow ships with only `knitr` and `rmarkdown` — enough to render params and simple code blocks. If your deck includes R-generated plots or tables, you need to declare those packages so the CI runner can install them.
+
+The recommended approach is `renv`, which locks your exact package versions and restores them automatically on deploy.
+
+### Setting up renv
+
+```r
+# In R, from the project root
+install.packages("renv")
+renv::init()                         # creates renv/ and renv.lock
+install.packages(c("tidyverse", "plotly"))  # add whatever you need
+renv::snapshot()                     # record them in renv.lock
+```
+
+Then commit:
+
+```bash
+git add renv.lock renv/
+git commit -m "🔧 chore: initialise renv with deck dependencies"
+git push
+```
+
+Once `renv.lock` exists in the repo, the deploy workflow detects it automatically and switches from the minimal install to `renv::restore()` — no other changes needed.
+
+A `renv.lock.template` is included in the repo with common package suggestions and the full workflow documented as comments.
+
+### Common packages
+
+| Purpose | Packages |
+|---|---|
+| Plotting | `ggplot2`, `tidyverse`, `plotly`, `patchwork` |
+| Tables | `gt`, `kableExtra`, `flextable` |
+| Circadian | `slumbR`, `tallieR`, `ActCR`, `circacompare` |
+| Stats | `lme4`, `brms`, `emmeans` |
+
+### Why not just add everything upfront?
+
+Heavy meta-packages like `tidyverse` take 3–5 minutes to install on a cold CI runner. Installing only what each deck actually uses keeps deploys fast. Add packages as you need them, snapshot, and commit.
+
+---
+
 ## Deploying to GitHub Pages
 
 See [`github-pages.md`](github-pages.md) for full instructions. The short version: push to `main` and GitHub Actions handles everything automatically.

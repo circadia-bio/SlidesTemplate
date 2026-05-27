@@ -89,7 +89,7 @@ SlidesTemplate/
 
 | Guide | What it covers |
 |---|---|
-| [`guide/getting-started.md`](guide/getting-started.md) | Installation, first render, params, file overview |
+| [`guide/getting-started.md`](guide/getting-started.md) | Installation, first render, params, R packages, renv |
 | [`guide/slide-reference.md`](guide/slide-reference.md) | Every class, layout, and formatting option |
 | [`guide/github-pages.md`](guide/github-pages.md) | Enabling Pages, custom domains, troubleshooting |
 

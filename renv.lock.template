@@ -1,0 +1,34 @@
+# renv.lock template for Circadia Lab slide decks
+#
+# This file is a TEMPLATE — it is not used by the deploy workflow unless you
+# rename or copy it to renv.lock and run `renv::restore()` locally.
+#
+# HOW TO USE
+# ----------
+# 1. In R, from the project root:
+#
+#      install.packages("renv")
+#      renv::init()          # initialises renv and creates renv.lock from your library
+#
+# 2. Add the packages your deck needs, e.g.:
+#
+#      install.packages(c("tidyverse", "plotly", "ggplot2"))
+#      renv::snapshot()      # updates renv.lock with the new packages
+#
+# 3. Commit renv.lock (and the renv/ folder) to git:
+#
+#      git add renv.lock renv/
+#      git commit -m "🔧 chore: initialise renv with deck dependencies"
+#
+# 4. The deploy workflow detects renv.lock automatically and uses
+#    r-lib/actions/setup-renv to restore your exact package versions on CI.
+#
+# COMMON PACKAGES FOR DATA SLIDES
+# --------------------------------
+# Plotting:   tidyverse, ggplot2, plotly, patchwork
+# Tables:     gt, kableExtra, flextable
+# Circadian:  slumbR, tallieR, ActCR, circacompare, GGIR
+# Stats:      lme4, brms, emmeans
+#
+# Once renv is initialised, renv::install("package") + renv::snapshot()
+# is the standard workflow for adding new packages.
