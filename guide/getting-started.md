@@ -54,7 +54,6 @@ cd my-talk
 ```
 YOUR-REPO/
 ├── index.qmd             # Your presentation source — edit this
-├── template.qmd          # Minimal blank template (same params structure)
 ├── custom.scss           # Theme file — only touch this if you need style changes
 ├── _quarto.yml           # Project settings — output directory etc.
 ├── assets/

@@ -42,7 +42,6 @@ See [`guide/getting-started.md`](guide/getting-started.md) for a full step-by-st
 ```
 SlidesTemplate/
 ├── index.qmd                 # ⭐ Your presentation — edit this
-├── template.qmd              # Minimal blank template (same params structure)
 ├── custom.scss               # Circadia Lab theme (fonts, colours, layout)
 ├── _quarto.yml               # Quarto project config
 ├── SlidesTemplate.Rproj      # RStudio project file
