@@ -54,6 +54,7 @@ cd my-talk
 ```
 YOUR-REPO/
 ├── index.qmd             # Your presentation source — edit this
+├── template.qmd          # Minimal blank template (same params structure)
 ├── custom.scss           # Theme file — only touch this if you need style changes
 ├── _quarto.yml           # Project settings — output directory etc.
 ├── assets/
@@ -76,31 +77,37 @@ You will spend almost all your time in `index.qmd`. The other files rarely need 
 
 Open `index.qmd` in RStudio or any text editor.
 
-### 1. Update the YAML front matter
+### 1. Update the cover slide params
 
-At the top of the file, change the `footer` text to match your talk:
+At the very top of the file you'll find a `params:` block. This is the only place you need to edit to customise the cover slide:
 
 ```yaml
 ---
-format:
-  revealjs:
-    footer: "Circadia Lab · circadia-lab.uk · github.com/circadia-bio"
-    ...
+params:
+  title: "Presentation Title"
+  subtitle: "Subtitle or context"
+  presenter: "Presenter Name"
+  event: "Conference · Date"
 ---
 ```
 
-### 2. Update the cover slide
+Change all four values to match your talk. The cover slide will render them automatically — you do not need to touch the raw HTML block below.
 
-Find the `{=html}` block near the top. Change the four text lines:
+You can also override params at render time from the terminal without editing the file:
 
-```html
-<h1 ...>Your Presentation Title</h1>
-<p ...>Subtitle or conference name</p>
-<p ...>Your Name &amp; Co-author Name</p>
-<p ...>Conference Name · Month Year</p>
+```bash
+quarto render index.qmd -P title:"My Talk" -P presenter:"Lucas França"
 ```
 
-Do not change anything else in this block — the pixel positions are calibrated for the cover image.
+### 2. Update the footer
+
+In the `format:` block, update the `footer:` line if you want a different footer text on content slides:
+
+```yaml
+format:
+  revealjs:
+    footer: "Circadia Lab · circadia-lab.uk · github.com/circadia-bio"
+```
 
 ### 3. Add your content slides
 
@@ -159,4 +166,4 @@ See [`github-pages.md`](github-pages.md) for full instructions. The short versio
 
 **Fonts not loading** — the Google Fonts import requires an internet connection. The fonts load fine in browsers but may fall back to Georgia/serif in some offline renderers.
 
-**Cover text misaligned** — the pixel positions in the HTML block (`left`, `top`, `width`, `height`) are fixed to the 1280×720 slide canvas. If the text drifts, check that `width: 1280` and `height: 720` are still set in the YAML front matter.
+**Cover text misaligned** — the pixel positions in the HTML block (`left`, `top`, `width`, `height`) are fixed to the 1280×720 slide canvas. If the text drifts, check that `width: 1280` and `height: 720` are still set in the `format:` block. The params values themselves have no effect on positioning.

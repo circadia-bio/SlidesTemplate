@@ -23,10 +23,11 @@ Clone or use as a GitHub template to start a new presentation in seconds. Every 
 git clone https://github.com/circadia-bio/YOUR-REPO-NAME.git
 cd YOUR-REPO-NAME
 
-# 3. Preview locally
+# 3. Edit the params block at the top of index.qmd
+# 4. Preview locally
 quarto preview index.qmd
 
-# 4. Edit index.qmd, commit, and push — slides deploy automatically
+# 5. Commit and push — slides deploy automatically
 git add -A
 git commit -m "✨ feat: initial slide content"
 git push
@@ -41,6 +42,7 @@ See [`guide/getting-started.md`](guide/getting-started.md) for a full step-by-st
 ```
 SlidesTemplate/
 ├── index.qmd                 # ⭐ Your presentation — edit this
+├── template.qmd              # Minimal blank template (same params structure)
 ├── custom.scss               # Circadia Lab theme (fonts, colours, layout)
 ├── _quarto.yml               # Quarto project config
 ├── SlidesTemplate.Rproj      # RStudio project file
@@ -61,6 +63,7 @@ SlidesTemplate/
 
 ## ✨ Features
 
+- **YAML params cover** — set title, subtitle, presenter, and event once at the top of the file; the cover slide renders them automatically
 - **Cover slide** — full-bleed background with right-aligned title, subtitle, presenter, date; footer and logo hidden automatically
 - **Content slides** — cream background, Playfair Display titles, Alice body, coral em-dash bullets
 - **`.intro`** — mid-blue introductory paragraph
@@ -87,7 +90,7 @@ SlidesTemplate/
 
 | Guide | What it covers |
 |---|---|
-| [`guide/getting-started.md`](guide/getting-started.md) | Installation, first render, file overview |
+| [`guide/getting-started.md`](guide/getting-started.md) | Installation, first render, params, file overview |
 | [`guide/slide-reference.md`](guide/slide-reference.md) | Every class, layout, and formatting option |
 | [`guide/github-pages.md`](guide/github-pages.md) | Enabling Pages, custom domains, troubleshooting |
 
