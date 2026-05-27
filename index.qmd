@@ -1,4 +1,10 @@
 ---
+params:
+  title: "Presentation Title"
+  subtitle: "Subtitle or context"
+  presenter: "Presenter Name"
+  event: "Conference · Date"
+
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -31,10 +37,10 @@ format:
     box-sizing: border-box;
     padding-right: 0;
   ">
-    <h1 style="font-family:'Playfair Display',serif; font-size:2.1em; font-weight:500; color:#004474; line-height:1.1; margin:0 0 0.3em;">Presentation Title</h1>
-    <p style="font-family:'Playfair Display',serif; font-size:1.05em; color:#1B6799; margin:0 0 0.6em;">Subtitle or context</p>
-    <p style="font-family:'Playfair Display',serif; font-size:0.85em; color:#FC544A; margin:0 0 0.2em;">Presenter Name</p>
-    <p style="font-family:'Playfair Display',serif; font-size:0.72em; color:#1B6799; margin:0;">Conference / Date</p>
+    <h1 style="font-family:'Playfair Display',serif; font-size:2.1em; font-weight:500; color:#004474; line-height:1.1; margin:0 0 0.3em;">`r params$title`</h1>
+    <p style="font-family:'Playfair Display',serif; font-size:1.05em; color:#1B6799; margin:0 0 0.6em;">`r params$subtitle`</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.85em; color:#FC544A; margin:0 0 0.2em;">`r params$presenter`</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.72em; color:#1B6799; margin:0;">`r params$event`</p>
   </div>
 </section>
 ```
