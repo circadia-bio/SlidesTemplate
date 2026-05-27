@@ -21,6 +21,10 @@ format:
     height: 720
 ---
 
+```{r}
+#| include: false
+```
+
 ```{=html}
 <section data-background-image="assets/cover.png"
          data-background-size="cover"
