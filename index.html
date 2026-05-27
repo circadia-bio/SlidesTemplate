@@ -209,10 +209,10 @@
     box-sizing: border-box;
     padding-right: 0;
   ">
-    <h1 style="font-family:'Playfair Display',serif; font-size:2.1em; font-weight:500; color:#004474; line-height:1.1; margin:0 0 0.3em;">`r params$title`</h1>
-    <p style="font-family:'Playfair Display',serif; font-size:1.05em; color:#1B6799; margin:0 0 0.6em;">`r params$subtitle`</p>
-    <p style="font-family:'Playfair Display',serif; font-size:0.85em; color:#FC544A; margin:0 0 0.2em;">`r params$presenter`</p>
-    <p style="font-family:'Playfair Display',serif; font-size:0.72em; color:#1B6799; margin:0;">`r params$event`</p>
+    <h1 style="font-family:'Playfair Display',serif; font-size:2.1em; font-weight:500; color:#004474; line-height:1.1; margin:0 0 0.3em;">Presentation Title</h1>
+    <p style="font-family:'Playfair Display',serif; font-size:1.05em; color:#1B6799; margin:0 0 0.6em;">Subtitle or context</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.85em; color:#FC544A; margin:0 0 0.2em;">Presenter Name</p>
+    <p style="font-family:'Playfair Display',serif; font-size:0.72em; color:#1B6799; margin:0;">Conference · Date</p>
   </div>
 </section>
 </section>
@@ -480,6 +480,44 @@ email@northumbria.ac.uk</p>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
